@@ -9,6 +9,7 @@ public class GunControl : MonoBehaviour
     [SerializeField] private Transform child;
     [Tooltip("Place the reticle ui object here")]
     [SerializeField] private Transform targetIcon;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -26,4 +27,6 @@ public class GunControl : MonoBehaviour
   
 
     }
+
+    
 }
