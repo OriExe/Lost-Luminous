@@ -26,7 +26,7 @@ namespace LinePuzzle
             Debug.Log("Collision");
             if (collision.gameObject.transform == lineColliderS) 
             {
-                lineRendererS.positionCount = 0;
+                lineRendererS.gameObject.GetComponent<LineCreate>().removeList(); //Removes the line function
             }
         }
     }

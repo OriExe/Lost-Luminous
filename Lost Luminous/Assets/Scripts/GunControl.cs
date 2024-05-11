@@ -1,7 +1,7 @@
 using UnityEngine;
 
 
-//https://youtu.be/149teLQMmOQ
+//https://youtu.be/149teLQMmOQ //Video that helped me make a working look at mouse controller
 public class GunControl : MonoBehaviour
 {
     private Camera main;
