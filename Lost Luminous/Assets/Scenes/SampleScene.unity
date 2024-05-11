@@ -156,6 +156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   child: {fileID: 1003038017}
   targetIcon: {fileID: 1575310179}
+  AimingControllerBounds: 3
 --- !u!212 &398486829
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -238,7 +239,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 1516733221692540663, guid: b64cf0f487599e34e9e8d972c8bdf2ce, type: 3}
   Gun: {fileID: 1003038017}
-  bulletforce: 13.12
+  bulletforce: 13.57
 --- !u!1 &456642014
 GameObject:
   m_ObjectHideFlags: 0
@@ -292,7 +293,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -604,7 +605,7 @@ RectTransform:
   m_GameObject: {fileID: 1575310178}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.49628, y: 0.49628, z: 0.49628}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 456642018}
