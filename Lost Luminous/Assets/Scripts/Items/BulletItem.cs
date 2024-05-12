@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class BulletItem : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private int noOfBullets;
+    [SerializeField] private ShootingScript gunScript;
+    private void OnEnable()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        gunScript.addBullets(noOfBullets);
+        enabled = false;
     }
 }

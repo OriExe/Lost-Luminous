@@ -10,7 +10,7 @@ public class ShootingScript : MonoBehaviour
     [Tooltip("Determines how slow each bullet will come, If the value is one 1 bullet will come out a second")]
     [SerializeField] private float shootingSpeed;
     private float timeLeft = 0;
-    // Update is called once per frame
+    private int ammo;
     private bool buttonHeld;
     void Update()
     {
@@ -35,5 +35,9 @@ public class ShootingScript : MonoBehaviour
         {
             buttonHeld = false;
         }
+    }
+    public void addBullets(int bullets)
+    {
+        ammo += bullets;
     }
 }

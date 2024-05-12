@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TorchItem : MonoBehaviour
 {
+    [SerializeField]private float power;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +15,10 @@ public class TorchItem : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void chargeTorch(int amount)
+    {
+        power += amount;
     }
 }
