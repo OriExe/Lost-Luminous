@@ -240,6 +240,7 @@ MonoBehaviour:
   bullet: {fileID: 1516733221692540663, guid: b64cf0f487599e34e9e8d972c8bdf2ce, type: 3}
   Gun: {fileID: 1003038017}
   bulletforce: 13.57
+  shootingSpeed: 0.2
 --- !u!1 &456642014
 GameObject:
   m_ObjectHideFlags: 0

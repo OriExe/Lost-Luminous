@@ -11,18 +11,45 @@ public class GunControl : MonoBehaviour
     [SerializeField] private Transform targetIcon;
     [SerializeField] private float AimingControllerBounds;
     private bool isController = true;
-    
+    private Vector2 oldMousePosition;
+
     // Start is called before the first frame update
     void Start()
     {
         main = Camera.main;
         AimingControllerBounds *= 90;
+        Cursor.visible = false;
     }
 
+    void checkKeyboardInput()
+    {
+        if (Vector2.Distance(Input.mousePosition, oldMousePosition) > 0.1f)
+        {
+            isController = false;
+        }
+    }
+
+    void checkControllerInput() 
+    {
+        if (Input.GetAxis("R Stick Vertical") != 0 || Input.GetAxis("R Stick Horizontal") != 0)
+        {
+            isController = true;
+            oldMousePosition = Input.mousePosition;
+        }
+    }
     // Update is called once per frame
     void Update()
     {
         Vector2 direction = new Vector2(0,0);
+        if (isController)
+        {
+            checkKeyboardInput();
+        }
+        else 
+        {
+            checkControllerInput();
+        }
+
         //Mouse Gun Control
         if (!isController)
         {
@@ -46,7 +73,7 @@ public class GunControl : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, AimingControllerBounds);
+        Gizmos.DrawWireSphere(transform.position, AimingControllerBounds / 90);
         
     }
 
