@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PickUpItem : MonoBehaviour
 {
-    public enum items {gun, torch, battery, sword, bullets};
+    public enum items {gun, torch, battery, sword, bullets, key};
     [SerializeField]private items itemHeld;
     [Header("Player Detection Values")]
     [SerializeField] private float pickUpRadius;
@@ -24,6 +24,7 @@ public class PickUpItem : MonoBehaviour
     private BulletItem bulletScript;
     private TorchItem torchScript;
     private BatteryItem batteryScript;
+    private keyItem keyItem;
     // Start is called before the first frame update
     void Start()
     {
@@ -70,6 +71,10 @@ public class PickUpItem : MonoBehaviour
                     case items.bullets:
                         bulletScript.enabled = true;
                         break;
+                    case items.key:
+                        keyItem.enabled = true;
+                        break;
+                        
                 }
             }
         }
