@@ -2,6 +2,7 @@ using UnityEngine;
 
 
 //https://youtu.be/149teLQMmOQ //Video that helped me make a working look at mouse controller
+//https://discussions.unity.com/t/xbox-one-controller-mapping-solved/187077 Includes information on controller binds
 public class GunControl : MonoBehaviour
 {
     private Camera main;
