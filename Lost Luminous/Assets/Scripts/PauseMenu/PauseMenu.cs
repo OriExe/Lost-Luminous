@@ -13,7 +13,7 @@ public class PauseMenu : MonoBehaviour
 
     private void Start()
     {
-        pauseAnimator = GameObject.Find("pause_Menu_UI").GetComponent<Animator>();
+        pauseAnimator = GameObject.Find("pauseMenuUI").GetComponent<Animator>();
         //pauseAnimator.updateMode = AnimatorUpdateMode.UnscaledTime;
 
     }
@@ -23,9 +23,11 @@ public class PauseMenu : MonoBehaviour
         {
             pauseMenuUI.SetActive(true);
             Time.timeScale = 0f;
-
             pauseAnimator.SetBool("GamePaused", true);
-            pauseAnimator.updateMode = AnimatorUpdateMode.UnscaledTime;
+
+
+
+
 
         }
 
@@ -35,8 +37,8 @@ public class PauseMenu : MonoBehaviour
     {
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
-        GameIsPaused = false;
-        
+        //GameIsPaused = false;
+
 
     }
 
