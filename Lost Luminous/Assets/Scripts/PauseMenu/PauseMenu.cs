@@ -14,20 +14,19 @@ public class PauseMenu : MonoBehaviour
     private void Start()
     {
         pauseAnimator = GameObject.Find("pause_Menu_UI").GetComponent<Animator>();
+        //pauseAnimator.updateMode = AnimatorUpdateMode.UnscaledTime;
 
     }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if(GameIsPaused)
-            {
-                Resume();
-            }
-            else
-            {
-                Pause();
-            }
+            pauseMenuUI.SetActive(true);
+            Time.timeScale = 0f;
+
+            pauseAnimator.SetBool("GamePaused", true);
+            pauseAnimator.updateMode = AnimatorUpdateMode.UnscaledTime;
+
         }
 
     }
@@ -41,13 +40,4 @@ public class PauseMenu : MonoBehaviour
 
     }
 
-    void Pause()
-    {
-        pauseMenuUI.SetActive(true);
-        Time.timeScale = 0f;
-        GameIsPaused = true;
-        pauseAnimator.SetBool("flipping book", true);
-
-
-    }
 }
