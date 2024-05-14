@@ -9,6 +9,7 @@ public class PopUp : MonoBehaviour
     public static PopUp instance;
 
     private void Awake()
+    {
         instance = this; 
     }
     
