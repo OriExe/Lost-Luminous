@@ -167,6 +167,7 @@ MonoBehaviour:
   - {fileID: 9020649327068791924}
   - {fileID: 9020649325134978504}
   - {fileID: 9020649326123510966}
+  - {fileID: 9020649326643250211}
   playerLayer:
     serializedVersion: 2
     m_Bits: 8

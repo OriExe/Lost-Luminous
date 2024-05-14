@@ -11,6 +11,11 @@ public class PopUp : MonoBehaviour
     private void Awake()
     {
         instance = this; 
+        if (cam == null ) 
+        {
+            cam = Camera.main;
+        }
+        gameObject.SetActive(false);
     }
     
     public void onCall(Transform itemObj,PickUpItem.items item)
