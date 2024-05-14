@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class PickUpItem : MonoBehaviour
@@ -9,8 +10,6 @@ public class PickUpItem : MonoBehaviour
     [SerializeField] private float pickUpRadius;
     [SerializeField] private LayerMask playerMask;
     private bool playerNearItem;
-    [Header("Collection Popup")]
-    [SerializeField] private Transform popup;
 
     private bool popUpShowingForItem;
 
@@ -46,20 +45,24 @@ public class PickUpItem : MonoBehaviour
         playerNearItem = Physics2D.OverlapCircle(transform.position,pickUpRadius,playerMask); //Detects Player
         if (playerNearItem && !itemAlreadyShown) 
         {
-            //Show popup
+            PopUp.instance.onCall(gameObject.transform, itemHeld);
             itemAlreadyShown = true;
+            popUpShowingForItem = true;
         }
         else if (!playerNearItem && popUpShowingForItem)
         {
-            //Hide popup
+            PopUp.instance.onHide();
             itemAlreadyShown = false;
+            popUpShowingForItem = false;
         }
        
 
         if (popUpShowingForItem)
-        { //Chest item not needed, it gets interacted elsewhere
+        {
             if (Input.GetButtonDown("Interact"))
             {
+                
+               //Chest item not needed, it gets interacted elsewhere
                 switch (itemHeld)
                 {
                     case items.gun:
@@ -80,12 +83,22 @@ public class PickUpItem : MonoBehaviour
                     case items.key:
                         keyItem.enabled = true;
                         break;
-                        
+                
                 }
+                
+                StartCoroutine(timeDelay());
             }
         }
     }
-
+    
+    IEnumerator timeDelay()
+    {
+        yield return new WaitForSeconds(0.1f);
+        PopUp.instance.onHide();
+        itemAlreadyShown = false;
+        popUpShowingForItem = false;
+        Destroy(gameObject);
+    }
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
