@@ -4,5 +4,8 @@ using UnityEngine;
 
 public class keyItem : MonoBehaviour
 {
-    //Nothing here lol
+    private void Start()
+    {
+       //Nothing here lol 
+    }
 }

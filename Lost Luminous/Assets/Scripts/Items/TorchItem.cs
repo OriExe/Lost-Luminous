@@ -5,20 +5,33 @@ using UnityEngine;
 public class TorchItem : MonoBehaviour
 {
     [SerializeField]private float power;
-    private bool torchEnabled;
+    private bool torchEnabled = false;
+    [SerializeField] private GameObject torchLight;
+    //
+    [SerializeField] private Color torchColour;
+    private Color normalColour;
+    [SerializeField] private SpriteRenderer sprite;
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        
+        normalColour = sprite.color;
     }
-
     // Update is called once per frame
     void Update()
     {
         if (Input.GetButtonDown("Fire1") && power > 0)
-        { 
-            //Enable torch light
-            torchEnabled = true;
+        {
+            torchEnabled = !torchEnabled;
+            torchLight.SetActive(torchEnabled);
+
+            if (torchEnabled) 
+            {
+                sprite.color = torchColour;
+            }
+            else
+            {
+                sprite.color = normalColour;
+            }
         }
 
         if (torchEnabled)
@@ -27,18 +40,14 @@ public class TorchItem : MonoBehaviour
         }
         if (power <= 0 && torchEnabled)
         {
+            torchLight.SetActive(false);
             power = 0;
             torchEnabled = false;
+            sprite.color = normalColour;
             //Disable Torch
         }
     }
 
-    private void OnDisable()
-    {
-        torchEnabled = false;
-        //DisableTorch
-
-    }
     public void chargeTorch(int amount)
     {
         power += amount;
