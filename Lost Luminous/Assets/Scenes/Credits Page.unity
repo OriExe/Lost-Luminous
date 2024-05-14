@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   creditSource: {fileID: 1512317929}
-  CreditBGM: {fileID: 8300000, guid: 979a873df6607c2499c9b4ba3ba3c58b, type: 3}
+  CreditBGM: {fileID: 8300000, guid: 542cf99238a92ae429bba6ae412dac69, type: 3}
 --- !u!4 &411505036
 Transform:
   m_ObjectHideFlags: 0
@@ -387,7 +387,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 979a873df6607c2499c9b4ba3ba3c58b, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 542cf99238a92ae429bba6ae412dac69, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
