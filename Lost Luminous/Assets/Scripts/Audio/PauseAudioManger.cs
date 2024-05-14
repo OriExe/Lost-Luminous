@@ -6,10 +6,15 @@ public class PauseAudioManger : MonoBehaviour
 {
     public AudioSource pauseSource;
     public AudioClip flipPages;
+    public AudioClip Resumed;
 
     public void PauseAudioManager()
     {
         pauseSource.clip = flipPages;
         pauseSource.Play();
+
+   
     }
+
+    
 }
