@@ -10,6 +10,7 @@ public class OpenChest : MonoBehaviour
     private bool playerNear;
     [SerializeField] private LayerMask playerLayer;
     [SerializeField]private float radius;
+    private bool popUpShowingForItem;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,15 +21,29 @@ public class OpenChest : MonoBehaviour
     void Update()
     {
         playerNear = Physics2D.OverlapCircle(transform.position, radius,playerLayer);
-        if (Input.GetButtonDown("Interact") && playerNear)
+        if (playerNear && !PickUpItem.itemAlreadyShown)
+        {
+            //ShowPopup
+            PickUpItem.itemAlreadyShown = true;
+
+        }
+        else if (!playerNear && popUpShowingForItem) 
+        {
+            //HidePopup
+            PickUpItem.itemAlreadyShown = false;
+        }
+        if (Input.GetButtonDown("Interact") && playerNear && popUpShowingForItem)
         {
             foreach (PickUpItem item in checkItems) 
             {
                 Instantiate(item, spawnLocations[Random.Range(0, spawnLocations.Length)]);
             }
             //Or could change chest texture 
+
             Destroy(gameObject);
         }
+
+        
     }
     private void OnDrawGizmosSelected()
     {

@@ -30,4 +30,9 @@ public class PlayerHealth : MonoBehaviour
             //Level Ends
         }
     }
+
+    public float getHealth()
+    {
+        return health;
+    }
 }

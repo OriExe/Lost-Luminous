@@ -11,9 +11,9 @@ public class PickUpItem : MonoBehaviour
     [Header("Collection Popup")]
     [SerializeField] private Transform popup;
 
-    
-    
-    private static bool itemAlreadyShown = false;
+    private bool popUpShowingForItem;
+
+    public static bool itemAlreadyShown = false;
     private static GameObject player;
 
     /// <summary>
@@ -44,13 +44,14 @@ public class PickUpItem : MonoBehaviour
             //Show popup
             itemAlreadyShown = true;
         }
-        else
+        else if (!playerNearItem && popUpShowingForItem)
         {
             //Hide popup
             itemAlreadyShown = false;
         }
+       
 
-        if (popup.gameObject.activeInHierarchy)
+        if (popUpShowingForItem)
         {
             if (Input.GetButtonDown("Interact"))
             {

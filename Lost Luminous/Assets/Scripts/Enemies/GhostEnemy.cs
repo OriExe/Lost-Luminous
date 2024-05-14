@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GhostEnemy : MonoBehaviour
@@ -12,6 +13,7 @@ public class GhostEnemy : MonoBehaviour
     [SerializeField] private float radius;
     private Transform player;
     [SerializeField] private float speed = 2f;
+    [SerializeField] private float damage = 10f;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,5 +36,13 @@ public class GhostEnemy : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, radius);
 
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Player")
+        {
+            PlayerHealth.healthInstance.healthChange(-damage);
+        }
     }
 }
