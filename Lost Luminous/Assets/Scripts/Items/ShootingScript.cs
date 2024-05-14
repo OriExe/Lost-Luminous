@@ -20,15 +20,20 @@ public class ShootingScript : MonoBehaviour
             timeLeft -= Time.deltaTime;
         }
         
-        //Shoots gun for xbox and keyboard and mouse controls
-        if ((Input.GetAxisRaw("Fire1") < -0.5f || Input.GetButtonDown("Fire1")) && timeLeft <= 0 && !buttonHeld)
+        if (ammo > 0)
         {
-            Rigidbody2D Bullet = Instantiate(bullet,Gun.position,Gun.parent.rotation).GetComponent<Rigidbody2D>();
-            Bullet.velocity = transform.up * bulletforce;
-            Destroy(Bullet.gameObject,4f);
-            timeLeft = shootingSpeed;
-            buttonHeld = true;
+            if ((Input.GetAxisRaw("Fire1") < -0.5f || Input.GetButtonDown("Fire1")) && timeLeft <= 0 && !buttonHeld)
+            {
+                Rigidbody2D Bullet = Instantiate(bullet, Gun.position, Gun.parent.rotation).GetComponent<Rigidbody2D>();
+                Bullet.velocity = transform.up * bulletforce;
+                Destroy(Bullet.gameObject, 4f);
+                timeLeft = shootingSpeed;
+                buttonHeld = true;
+                ammo--;
+            }
         }
+        //Shoots gun for xbox and keyboard and mouse controls
+        
         
         //Makes gun singleFire rather than automatic
         if (Input.GetAxisRaw("Fire1") >= -0.1f && buttonHeld == true && ammo > 0)
