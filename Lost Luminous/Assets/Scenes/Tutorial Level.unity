@@ -177,6 +177,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 926257965}
+  - component: {fileID: 926257966}
   m_Layer: 0
   m_Name: TutorialAudioManager
   m_TagString: Untagged
@@ -200,6 +201,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &926257966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 926257964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3af32e92d2f5b0746a0ae1a3f62e2c24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TutorialSource: {fileID: 2014444626}
+  beginningBGM: {fileID: 8300000, guid: 979a873df6607c2499c9b4ba3ba3c58b, type: 3}
 --- !u!1 &1524123287
 GameObject:
   m_ObjectHideFlags: 0
@@ -3966,11 +3981,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 979a873df6607c2499c9b4ba3ba3c58b, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
