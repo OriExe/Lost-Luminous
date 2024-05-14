@@ -14,6 +14,7 @@ public class GhostEnemy : MonoBehaviour
     private Transform player;
     [SerializeField] private float speed = 2f;
     [SerializeField] private float damage = 10f;
+    [SerializeField] private EnemyHit healthCode;
     // Start is called before the first frame update
     void Start()
     {
