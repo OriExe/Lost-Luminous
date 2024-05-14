@@ -167,6 +167,10 @@ MonoBehaviour:
   - {fileID: 9020649327068791924}
   - {fileID: 9020649325134978504}
   - {fileID: 9020649326123510966}
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  radius: 1.32
 --- !u!1 &9020649327068791927
 GameObject:
   m_ObjectHideFlags: 0

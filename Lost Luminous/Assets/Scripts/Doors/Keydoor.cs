@@ -7,8 +7,8 @@ public class Keydoor : MonoBehaviour
 {
     //Layers 
     private bool playerNear;
-    private LayerMask playerLayer;
-    private float radius;
+    [SerializeField]private LayerMask playerLayer;
+    [SerializeField]private float radius;
     // Start is called before the first frame update
     void Start()
     {

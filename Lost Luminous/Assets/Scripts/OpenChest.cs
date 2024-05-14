@@ -8,8 +8,8 @@ public class OpenChest : MonoBehaviour
     [SerializeField] private PickUpItem[] checkItems;
     [SerializeField] private Transform[] spawnLocations;
     private bool playerNear;
-    private LayerMask playerLayer;
-    private float radius;
+    [SerializeField] private LayerMask playerLayer;
+    [SerializeField]private float radius;
     // Start is called before the first frame update
     void Start()
     {

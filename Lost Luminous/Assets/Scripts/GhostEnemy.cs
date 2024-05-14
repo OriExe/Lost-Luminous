@@ -8,8 +8,8 @@ public class GhostEnemy : MonoBehaviour
     /// Tracking Radius
     /// </summary>
     private bool playerNear;
-    private LayerMask playerLayer;
-    private float radius;
+    [SerializeField] private LayerMask playerLayer;
+    [SerializeField] private float radius;
     private Transform player;
     [SerializeField] private float speed = 2f;
     // Start is called before the first frame update
@@ -24,7 +24,8 @@ public class GhostEnemy : MonoBehaviour
         playerNear = Physics2D.OverlapCircle(transform.position, radius, playerLayer);
         if (playerNear)
         {
-            Vector2.MoveTowards(transform.position, player.position, speed);
+            print("Player");
+            transform.position = Vector2.MoveTowards(transform.position, player.position, speed);
         }
     }
 
