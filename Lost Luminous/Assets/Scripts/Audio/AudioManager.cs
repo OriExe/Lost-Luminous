@@ -4,17 +4,13 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
+    public AudioSource source;
     public AudioClip BGmusic;
     public AudioClip Buttonclick;
 
-    void Start()
+    public void Resume()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        source.clip = Buttonclick;
+        source.Play();
     }
 }
