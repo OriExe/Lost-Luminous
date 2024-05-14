@@ -102,3 +102,4 @@ MonoBehaviour:
     m_Bits: 8
   radius: 11.21
   speed: 0.012
+  damage: 20

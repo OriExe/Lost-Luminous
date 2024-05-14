@@ -1,19 +1,19 @@
+using System.Collections;
 using UnityEngine;
 
 public class PickUpItem : MonoBehaviour
 {
-    public enum items {gun, torch, battery, sword, bullets, key};
+    public enum items {gun, torch, battery, sword, bullets, key, chest};
+    [Tooltip("Please don't use chest as itemHeld")]
     [SerializeField]private items itemHeld;
     [Header("Player Detection Values")]
     [SerializeField] private float pickUpRadius;
     [SerializeField] private LayerMask playerMask;
     private bool playerNearItem;
-    [Header("Collection Popup")]
-    [SerializeField] private Transform popup;
 
-    
-    
-    private static bool itemAlreadyShown = false;
+    private bool popUpShowingForItem;
+
+    public static bool itemAlreadyShown = false;
     private static GameObject player;
 
     /// <summary>
@@ -32,28 +32,37 @@ public class PickUpItem : MonoBehaviour
         {
             player = GameObject.FindGameObjectWithTag("Player");
         }
+        if (itemHeld == items.chest) 
+        {
+            Debug.LogError("Chest cannot equal itemHeld, please change this to something else!");
+        }
         //Could put all the items in the player object or in an empty object connected to the player
     }
 
     // Update is called once per frame
     void Update()
     {
-        playerNearItem = Physics2D.OverlapCircle(transform.position,pickUpRadius,playerMask);
+        playerNearItem = Physics2D.OverlapCircle(transform.position,pickUpRadius,playerMask); //Detects Player
         if (playerNearItem && !itemAlreadyShown) 
         {
-            //Show popup
+            PopUp.instance.onCall(gameObject.transform, itemHeld);
             itemAlreadyShown = true;
+            popUpShowingForItem = true;
         }
-        else
+        else if (!playerNearItem && popUpShowingForItem)
         {
-            //Hide popup
+            PopUp.instance.onHide();
             itemAlreadyShown = false;
+            popUpShowingForItem = false;
         }
+       
 
-        if (popup.gameObject.activeInHierarchy)
+        if (popUpShowingForItem)
         {
             if (Input.GetButtonDown("Interact"))
             {
+                
+               //Chest item not needed, it gets interacted elsewhere
                 switch (itemHeld)
                 {
                     case items.gun:
@@ -74,12 +83,22 @@ public class PickUpItem : MonoBehaviour
                     case items.key:
                         keyItem.enabled = true;
                         break;
-                        
+                
                 }
+                
+                StartCoroutine(timeDelay());
             }
         }
     }
-
+    
+    IEnumerator timeDelay()
+    {
+        yield return new WaitForSeconds(0.1f);
+        PopUp.instance.onHide();
+        itemAlreadyShown = false;
+        popUpShowingForItem = false;
+        Destroy(gameObject);
+    }
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
