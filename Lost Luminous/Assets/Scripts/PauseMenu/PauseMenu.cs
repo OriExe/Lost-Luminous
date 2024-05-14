@@ -4,18 +4,14 @@ using UnityEngine;
 
 public class PauseMenu : MonoBehaviour
 {
-    public static bool PausedGame = false;
+    public static bool isPaused = false;
 
-
-    public GameObject pausemneuUI;
-  
-
-    
+    public GameObject PauseMenuUI;
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (PausedGame)
+            if (isPaused)
             {
                 Resume();
             }
@@ -28,15 +24,15 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
-        pausemneuUI.SetActive(false);
+        PauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
-        PausedGame = false;
+        isPaused = false;
     }
 
     void Pause()
     {
-        pausemneuUI.SetActive(true);
+        PauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
-        PausedGame=true;
+        isPaused = true;
     }
 }
