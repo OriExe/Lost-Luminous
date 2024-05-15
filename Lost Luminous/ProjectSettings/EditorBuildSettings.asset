@@ -15,9 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Ground Floor.unity
     guid: 2d0f9bfa98e814b4bb92ecb1e4bfee58
   - enabled: 1
-    path: Assets/Scenes/Credits Page.unity
-    guid: 89276df1bac5c0e4a8b451fe654b9158
-  - enabled: 1
     path: Assets/Scenes/-1 Basement.unity
     guid: 195923dc1be624148aee142020824766
+  - enabled: 1
+    path: Assets/Scenes/Credits Page.unity
+    guid: 89276df1bac5c0e4a8b451fe654b9158
   m_configObjects: {}

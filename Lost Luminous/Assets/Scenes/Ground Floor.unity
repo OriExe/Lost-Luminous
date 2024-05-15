@@ -14129,7 +14129,7 @@ PrefabInstance:
     - target: {fileID: 1321729731189439411, guid: 68b83c77af4abf64aafc38691208bfd2, type: 3}
       propertyPath: checkItems.Array.data[1]
       value: 
-      objectReference: {fileID: 3894908232060302751, guid: 93955f703161ac745951428808fa3420, type: 3}
+      objectReference: {fileID: 3963377680031431432, guid: b69f2106ee8a39640b2d68ab5f8bab21, type: 3}
     - target: {fileID: 9020649326643250211, guid: 68b83c77af4abf64aafc38691208bfd2, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -16102,9 +16102,9 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1413164391385199170, guid: 2532a76ae76808a43963d7e8be70362b, type: 3}
-      propertyPath: DoorOpen
-      value: 
-      objectReference: {fileID: 4396251742727772604}
+      propertyPath: sceneIndex
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1413164391385199171, guid: 2532a76ae76808a43963d7e8be70362b, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -16155,8 +16155,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2532a76ae76808a43963d7e8be70362b, type: 3}
---- !u!82 &4396251742727772604 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 4100152950353061293, guid: 2532a76ae76808a43963d7e8be70362b, type: 3}
-  m_PrefabInstance: {fileID: 4396251742727772603}
-  m_PrefabAsset: {fileID: 0}
