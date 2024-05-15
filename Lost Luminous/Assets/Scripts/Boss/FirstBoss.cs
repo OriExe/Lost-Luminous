@@ -26,9 +26,9 @@ public class FirstBoss : MonoBehaviour
     {
         startingHealth = healthCode.getHealth();
         phases[0] = speed;
-        phases[1] = speed*2;
-        phases[2] = phases[1]*2;
-        phases[3] = phases[2]*2.2f;
+        phases[1] = speed*1.2f;
+        phases[2] = phases[1]*1.5f;
+        phases[3] = phases[2]*1.8f;
         Player = GameObject.FindGameObjectWithTag("Player").transform;
         StartCoroutine(dashAttack());
     }
