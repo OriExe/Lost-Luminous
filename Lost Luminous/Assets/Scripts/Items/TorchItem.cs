@@ -19,7 +19,7 @@ public class TorchItem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1") && power > 0)
+        if ((Input.GetButtonDown("Fire1") || Input.GetAxisRaw("Fire1") < -0.5f) && power > 0)
         {
             torchEnabled = !torchEnabled;
             torchLight.SetActive(torchEnabled);
@@ -48,6 +48,13 @@ public class TorchItem : MonoBehaviour
         }
     }
 
+    private void OnDisable()
+    {
+        torchLight.SetActive(false);
+        torchEnabled = false;
+        sprite.color = normalColour;
+        //Disable Torch
+    }
     public void chargeTorch(int amount)
     {
         power += amount;

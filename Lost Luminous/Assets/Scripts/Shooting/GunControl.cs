@@ -66,7 +66,7 @@ public class GunControl : MonoBehaviour
         }
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg; //What is this???
         Quaternion rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
-        gameObject.transform.rotation = rotation;
+        child.transform.rotation = rotation;
       
 
     }
