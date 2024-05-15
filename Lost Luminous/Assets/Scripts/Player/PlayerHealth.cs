@@ -22,15 +22,17 @@ public class PlayerHealth : MonoBehaviour
     public void healthChange(float amount)
     {
         health += amount;
+        healthChanged();
     }
 
     private void healthChanged()
     {
+        Death.Play();
         if (health <=0)
         {
             health = 0;
             //Level Ends
-            Death.Play();
+            
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }

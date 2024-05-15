@@ -63,7 +63,7 @@ public class GunControl : MonoBehaviour
         else if (isController) 
         {
             targetIcon.transform.position = new Vector3(AimingControllerBounds * Input.GetAxis("R Stick Vertical"), Input.GetAxis("R Stick Horizontal") * AimingControllerBounds,0) + main.WorldToScreenPoint(transform.position);
-            direction = main.ScreenToWorldPoint(targetIcon.position);
+            direction = main.ScreenToWorldPoint(targetIcon.position) - gameObject.transform.position;
         }
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg; //What is this???
         Quaternion rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
