@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class newRoomDoor : MonoBehaviour
 {
+    public AudioSource DoorOpen;
 
     [Header("Radius door can open fields")]
     [SerializeField] private float doorOpenRadius;
@@ -24,7 +25,9 @@ public class newRoomDoor : MonoBehaviour
         playerNearDoor = Physics2D.OverlapCircle(transform.position, doorOpenRadius, playerMask);
         if (Input.GetButtonDown("Interact") && playerNearDoor)
         {
+            DoorOpen.Play();
             SceneManager.LoadScene(sceneIndex);
+            
         }
     }
     private void OnDrawGizmosSelected()

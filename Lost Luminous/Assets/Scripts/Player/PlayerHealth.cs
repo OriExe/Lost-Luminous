@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-     
+    public AudioSource Death;
+
     [SerializeField]private float health;
     public static PlayerHealth healthInstance;
     
@@ -28,6 +29,7 @@ public class PlayerHealth : MonoBehaviour
         {
             health = 0;
             //Level Ends
+            Death.Play();
         }
     }
 

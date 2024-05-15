@@ -446,6 +446,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd6fc69c292400e47b5f864a0653c55b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  toggleOnandOff: {fileID: 0}
   power: 5
   torchLight: {fileID: 4834634777834471406}
   torchColour: {r: 0.990566, g: 0.098122105, b: 0.9066092, a: 1}
