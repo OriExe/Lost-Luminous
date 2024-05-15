@@ -6,6 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/The Cutscene for Lost Luminous.unity
+    guid: 1d35c2c23955bb0458125f003cd6f0cf
+  - enabled: 1
+    path: Assets/Scenes/Tutorial Level.unity
+    guid: ec77e1b900df00e44a8649a5d3cf3158
+  - enabled: 1
+    path: Assets/Scenes/Ground Floor.unity
+    guid: 2d0f9bfa98e814b4bb92ecb1e4bfee58
+  - enabled: 1
+    path: Assets/Scenes/Credits Page.unity
+    guid: 89276df1bac5c0e4a8b451fe654b9158
+  - enabled: 1
+    path: Assets/Scenes/-1 Basement.unity
+    guid: 195923dc1be624148aee142020824766
   m_configObjects: {}

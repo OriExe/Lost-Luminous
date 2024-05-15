@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ItemScrolling : MonoBehaviour
 {
-    public static PickUpItem.items[] unlockedItems = {PickUpItem.items.sword,PickUpItem.items.torch };
+    public static PickUpItem.items[] unlockedItems = new PickUpItem.items[0];
     private int index;
     [SerializeField] private Animator animator;
 
