@@ -26,6 +26,7 @@ public class GhostEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (PauseMenu.isPaused) return;
         playerNear = Physics2D.OverlapCircle(transform.position, radius, playerLayer);
         if (playerNear)
         {

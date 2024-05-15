@@ -37,6 +37,7 @@ public class FirstBoss : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (PauseMenu.isPaused) return;
         //Checks if boss is dead otherwise it keeps moving
         if (healthCode.isDead == false)
         {
