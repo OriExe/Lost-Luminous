@@ -12,7 +12,7 @@ public class newRoomDoor : MonoBehaviour
     [SerializeField] private LayerMask playerMask;
     private bool playerNearDoor;
 
-    private int sceneIndex;
+    [SerializeField]private int sceneIndex;
     // Start is called before the first frame update
     void Start()
     {
