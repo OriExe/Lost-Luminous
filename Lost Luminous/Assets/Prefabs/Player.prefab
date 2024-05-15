@@ -106,6 +106,8 @@ GameObject:
   - component: {fileID: 4834634778344448499}
   - component: {fileID: 4834634778344448496}
   - component: {fileID: 4834634778344448498}
+  - component: {fileID: 7027864208164035064}
+  - component: {fileID: 6243253157260292014}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -248,6 +250,41 @@ MonoBehaviour:
   gunItem: {fileID: 4834634778604200955}
   swordItem: {fileID: 4834634778604200952}
   torchItem: {fileID: 4834634778604200838}
+--- !u!50 &7027864208164035064
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4834634778344448508}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!114 &6243253157260292014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4834634778344448508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bd887159418a2b43abd6cace9a556ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 3.29
+  rb2d: {fileID: 7027864208164035064}
 --- !u!1 &4834634778604200836
 GameObject:
   m_ObjectHideFlags: 0
