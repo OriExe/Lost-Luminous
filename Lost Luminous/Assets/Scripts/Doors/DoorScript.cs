@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DoorScript : MonoBehaviour
 {
+    public AudioSource DoorOpen;
 
     [Header("Radius door can open fields")]
     [SerializeField] private float doorOpenRadius;
@@ -24,6 +25,7 @@ public class DoorScript : MonoBehaviour
         if (Input.GetButtonDown("Interact") && playerNearDoor)
         {
             GameObject.FindGameObjectWithTag("Player").transform.position = newPosition.position;
+            DoorOpen.Play();
         }
     }
     private void OnDrawGizmosSelected()
