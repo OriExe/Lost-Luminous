@@ -133,6 +133,8 @@ GameObject:
   m_Component:
   - component: {fileID: 51891195}
   - component: {fileID: 51891194}
+  - component: {fileID: 51891197}
+  - component: {fileID: 51891196}
   m_Layer: 0
   m_Name: Lost Luminous cutscene
   m_TagString: Untagged
@@ -190,6 +192,48 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &51891196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 51891193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11e069580a2eb164998a1736d88e8a7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &51891197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 51891193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 4af55570760e72a4fb8dd18825c9c92a, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 51891196}
+          m_TargetAssemblyTypeName: changeScene, Assembly-CSharp
+          m_MethodName: ChangeScene
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &943893456
 GameObject:
   m_ObjectHideFlags: 0
@@ -279,7 +323,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 16777215
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -531,6 +575,8 @@ PlayableDirector:
     value: {fileID: 0}
   - key: {fileID: 4032075771552092685, guid: ed29d189c0f2ea74998dbda7ea00550a, type: 2}
     value: {fileID: 51891193}
+  - key: {fileID: -739547600730743863, guid: ed29d189c0f2ea74998dbda7ea00550a, type: 2}
+    value: {fileID: 51891197}
   m_ExposedReferences:
     m_References:
     - fab931c25ca83de4f905aa801f061136: {fileID: 1657771976}
@@ -640,7 +686,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 16777215
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3

@@ -8,7 +8,7 @@ public class EnemyHit : MonoBehaviour
     public bool isDead = false;
    public void getHit(float amount)
     {
-        amount -= health;
+        health -= amount;
 
         if (health <0 ) 
         {

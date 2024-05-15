@@ -318,6 +318,30 @@ MonoBehaviour:
   m_OpenClipOffsetRotation: {x: 0, y: 0, z: 0, w: 1}
   m_Rotation: {x: 0, y: 0, z: 0, w: 1}
   m_ApplyOffsets: 0
+--- !u!114 &-739547600730743863
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b46e36075dd1c124a8422c228e75e1fb, type: 3}
+  m_Name: Signal Track
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_AnimClip: {fileID: 0}
+  m_Locked: 0
+  m_Muted: 0
+  m_CustomPlayableFullTypename: 
+  m_Curves: {fileID: 0}
+  m_Parent: {fileID: 11400000}
+  m_Children: []
+  m_Clips: []
+  m_Markers:
+    m_Objects:
+    - {fileID: 6162437693995075800}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -337,7 +361,8 @@ MonoBehaviour:
   - {fileID: -1244109930082540842}
   - {fileID: 4032075771552092685}
   - {fileID: -7429720196247543730}
-  m_FixedDuration: 0
+  - {fileID: -739547600730743863}
+  m_FixedDuration: 36.8
   m_EditorSettings:
     m_Framerate: 60
     m_ScenePreview: 1
@@ -523,7 +548,7 @@ MonoBehaviour:
     m_Start: 12.016666666666667
     m_ClipIn: 0
     m_Asset: {fileID: -7732314699394277287}
-    m_Duration: 7.4499999999999975
+    m_Duration: 24.800000000000004
     m_TimeScale: 1
     m_ParentTrack: {fileID: 4032075771552092685}
     m_EaseInDuration: 0
@@ -591,6 +616,22 @@ MonoBehaviour:
   m_Markers:
     m_Objects: []
   m_PostPlaybackState: 3
+--- !u!114 &6162437693995075800
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
+  m_Name: Signal Emitter
+  m_EditorClassIdentifier: 
+  m_Time: 36.81666666666667
+  m_Retroactive: 0
+  m_EmitOnce: 1
+  m_Asset: {fileID: 11400000, guid: 4af55570760e72a4fb8dd18825c9c92a, type: 2}
 --- !u!114 &7333983468747252272
 MonoBehaviour:
   m_ObjectHideFlags: 1
