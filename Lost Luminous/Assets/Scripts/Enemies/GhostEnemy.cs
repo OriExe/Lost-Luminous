@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class GhostEnemy : MonoBehaviour
 {
+    public AudioSource Ghost;
+
     /// <summary>
     /// Tracking Radius
     /// </summary>
@@ -44,6 +46,8 @@ public class GhostEnemy : MonoBehaviour
         if (collision.tag == "Player")
         {
             PlayerHealth.healthInstance.healthChange(-damage);
+            Ghost.Play();
         }
     }
+
 }
