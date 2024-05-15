@@ -137,7 +137,6 @@ GameObject:
   - component: {fileID: 247818819}
   - component: {fileID: 247818818}
   - component: {fileID: 247818817}
-  - component: {fileID: 247818816}
   - component: {fileID: 247818815}
   m_Layer: 0
   m_Name: Items
@@ -177,18 +176,6 @@ MonoBehaviour:
   torchLight: {fileID: 2082747991}
   torchColour: {r: 0.990566, g: 0.098122105, b: 0.9066092, a: 1}
   sprite: {fileID: 508487751}
---- !u!114 &247818816
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 247818813}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 803246c6705801144b69fd7f43f9288c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &247818817
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -333,6 +320,7 @@ GameObject:
   - component: {fileID: 508487750}
   - component: {fileID: 508487754}
   - component: {fileID: 508487753}
+  - component: {fileID: 508487755}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -459,6 +447,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 200
+--- !u!114 &508487755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 508487749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8096efbc5a16e004298f982bc3c1d84e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 508487750}
+  gunItem: {fileID: 247818818}
+  swordItem: {fileID: 247818817}
+  torchItem: {fileID: 247818815}
 --- !u!1 &568152737
 GameObject:
   m_ObjectHideFlags: 0
@@ -911,6 +915,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2082747993}
   - component: {fileID: 2082747992}
+  - component: {fileID: 2082747994}
   m_Layer: 0
   m_Name: TorchLight
   m_TagString: Untagged
@@ -949,3 +954,15 @@ Transform:
   m_Father: {fileID: 508487752}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2082747994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2082747991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 803246c6705801144b69fd7f43f9288c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

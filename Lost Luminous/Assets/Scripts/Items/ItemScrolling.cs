@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class ItemScrolling : MonoBehaviour
 {
-    public static PickUpItem.items[] unlockedItems;
+    public static PickUpItem.items[] unlockedItems = {PickUpItem.items.sword,PickUpItem.items.torch };
     private int index;
+    [SerializeField] private Animator animator;
 
     [Header("Items Player Can hold and use")]
     [SerializeField] private ShootingScript gunItem;
@@ -20,6 +21,7 @@ public class ItemScrolling : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (unlockedItems.Length == 0) return; 
         if (Input.GetAxis("Mouse ScrollWheel") > 0 || Input.GetButtonDown("RB"))
         {
             print("Going Up");
@@ -43,16 +45,19 @@ public class ItemScrolling : MonoBehaviour
         switch (unlockedItems[index])
         {
             case PickUpItem.items.gun:
+                animator.SetInteger("State", 0);
                 gunItem.enabled = true;
                 swordItem.enabled = false;
                 torchItem.enabled = false; 
                 break;
             case PickUpItem.items.torch:
+                animator.SetInteger("State", 1);
                 gunItem.enabled = false;
                 swordItem.enabled = false;
                 torchItem.enabled = true;
                 break;
             case PickUpItem.items.sword:
+                animator.SetInteger("State", 2);
                 gunItem.enabled = false;
                 swordItem.enabled = true;
                 torchItem.enabled = false;
