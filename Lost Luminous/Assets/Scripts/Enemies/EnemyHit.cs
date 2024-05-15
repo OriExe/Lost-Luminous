@@ -20,7 +20,7 @@ public class EnemyHit : MonoBehaviour
     void gameOver ()
     {
         isDead = true;
-        Destroy(gameObject);
+        Destroy(gameObject,1f);
         //Play Death Animation
     }
 }

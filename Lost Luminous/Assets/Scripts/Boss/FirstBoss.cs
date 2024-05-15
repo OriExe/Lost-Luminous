@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 public class FirstBoss : MonoBehaviour
@@ -14,7 +15,7 @@ public class FirstBoss : MonoBehaviour
     /// <summary>
     /// Attack Phases
     /// </summary>
-    private float[] phases = new float[4];
+    [SerializeField]private float[] phases = new float[4];
     private float lengthOfAttack = 2f;
     private int currentPhase = 0;
     private float startingHealth;
@@ -26,9 +27,9 @@ public class FirstBoss : MonoBehaviour
     {
         startingHealth = healthCode.getHealth();
         phases[0] = speed;
-        phases[1] = speed*1.2f;
-        phases[2] = phases[1]*1.5f;
-        phases[3] = phases[2]*1.8f;
+        phases[1] = speed*1.8f;
+        phases[2] = phases[1]*2f;
+        phases[3] = phases[2]*2f;
         Player = GameObject.FindGameObjectWithTag("Player").transform;
         StartCoroutine(dashAttack());
     }
@@ -47,7 +48,7 @@ public class FirstBoss : MonoBehaviour
             {
                 TriggeredEvent = true;
                 //Triggers an event
-                Destroy(gameObject);
+                SceneManager.LoadScene(5);
             }
 
         }
