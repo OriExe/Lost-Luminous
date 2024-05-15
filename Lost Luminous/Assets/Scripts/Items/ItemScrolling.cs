@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ItemScrolling : MonoBehaviour
 {
-    public static PickUpItem.items[] unlockedItems = new PickUpItem.items[0];
+    public static List<PickUpItem.items> unlockedItems = new List<PickUpItem.items>();
     private int index;
     [SerializeField] private Animator animator;
 
@@ -21,7 +21,7 @@ public class ItemScrolling : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (unlockedItems.Length == 0) return; 
+        if (unlockedItems.Count == 0) return; 
         if (Input.GetAxis("Mouse ScrollWheel") > 0 || Input.GetButtonDown("RB"))
         {
             print("Going Up");
@@ -35,9 +35,9 @@ public class ItemScrolling : MonoBehaviour
 
         if (index < 0)
         {
-            index = unlockedItems.Length-1;
+            index = unlockedItems.Count - 1;
         }
-        if (index >= unlockedItems.Length)
+        if (index >= unlockedItems.Count)
         {
             index = 0;
         }
@@ -63,5 +63,17 @@ public class ItemScrolling : MonoBehaviour
                 torchItem.enabled = false;
                 break;
         }
+    }
+
+    public void addItem(PickUpItem.items item)
+    {
+        foreach(PickUpItem.items unlockedItem in unlockedItems) 
+        {
+            if (unlockedItem == item)
+            {
+                return; //Item already in list
+            }
+        }
+        unlockedItems.Add(item);
     }
 }

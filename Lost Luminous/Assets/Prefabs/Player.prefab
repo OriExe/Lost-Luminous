@@ -398,7 +398,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4834634778604200836}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8d515d6403fd63f46b8f361fa4716dbd, type: 3}
   m_Name: 
@@ -420,6 +420,7 @@ MonoBehaviour:
   bulletforce: 13.57
   shootingSpeed: 0.2
   ammo: 39
+  playerCollision: {fileID: 3739598835315181920}
 --- !u!114 &4834634778604200952
 MonoBehaviour:
   m_ObjectHideFlags: 0

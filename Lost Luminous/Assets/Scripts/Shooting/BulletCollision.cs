@@ -9,6 +9,8 @@ public class BulletCollision : MonoBehaviour
         if (collision.gameObject.tag == "Enemy")
         {
             collision.gameObject.GetComponent<EnemyHit>().getHit(damage);
+            Destroy(gameObject);
         }
+        Destroy(gameObject);
     }
 }

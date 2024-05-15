@@ -19,19 +19,22 @@ public class PickUpItem : MonoBehaviour
     /// <summary>
     /// Item scripts that are decided to a certain item
     /// </summary>
-    private ShootingScript gunScript;
-    private Sword swordScript;
-    private BulletItem bulletScript;
-    private TorchItem torchScript;
-    private BatteryItem batteryScript;
-    private keyItem keyItem;
+    private static BulletItem bulletScript;
+    private static BatteryItem batteryScript;
+    private static keyItem keyItem;
+    private static ItemScrolling weaponSwitcher;
     // Start is called before the first frame update
     void Start()
     {
         if (player == null) 
         {
             player = GameObject.FindGameObjectWithTag("Player");
+            bulletScript = player.gameObject.GetComponentInChildren<BulletItem>();
+            batteryScript = player.gameObject.GetComponentInChildren<BatteryItem>();
+            keyItem = player.gameObject.GetComponentInChildren<keyItem>();
+            weaponSwitcher = player.gameObject.GetComponent<ItemScrolling>();
         }
+
         if (itemHeld == items.chest) 
         {
             Debug.LogError("Chest cannot equal itemHeld, please change this to something else!");
@@ -66,16 +69,16 @@ public class PickUpItem : MonoBehaviour
                 switch (itemHeld)
                 {
                     case items.gun:
-                        gunScript.enabled=true;
+                        weaponSwitcher.addItem(itemHeld);
                         break;
                     case items.torch:
-                        torchScript.enabled = true;
+                        weaponSwitcher.addItem(itemHeld);
                         break;
                     case items.battery:
                         batteryScript.enabled = true;
                         break;
                     case items.sword:
-                        swordScript.enabled = true;
+                        weaponSwitcher.addItem(itemHeld);
                         break;
                     case items.bullets:
                         bulletScript.enabled = true;

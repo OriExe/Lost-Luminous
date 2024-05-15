@@ -12,6 +12,9 @@ public class ShootingScript : MonoBehaviour
     private float timeLeft = 0;
     [SerializeField]private int ammo;
     private bool buttonHeld;
+    [SerializeField] private BoxCollider2D playerCollision;
+
+
     void Update()
     {
         //Controls shooting speed by lowering the time, If timeleft is 0 the player can shoot
@@ -26,6 +29,7 @@ public class ShootingScript : MonoBehaviour
             if ((Input.GetAxisRaw("Fire1") < -0.5f || Input.GetButtonDown("Fire1")) && timeLeft <= 0 && !buttonHeld)
             {
                 Rigidbody2D Bullet = Instantiate(bullet, Gun.position, Gun.rotation).GetComponent<Rigidbody2D>();
+                Physics2D.IgnoreCollision(Bullet.gameObject.GetComponent<BoxCollider2D>(), playerCollision);
                 Bullet.velocity = Gun.up * bulletforce;
                 Destroy(Bullet.gameObject, 4f);
                 timeLeft = shootingSpeed;
@@ -42,6 +46,7 @@ public class ShootingScript : MonoBehaviour
             buttonHeld = false;
         }
     }
+
     public void addBullets(int bullets)
     {
         ammo += bullets;
