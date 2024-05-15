@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TorchItem : MonoBehaviour
 {
+    public AudioSource toggleOnandOff;
     [SerializeField]private float power;
     private bool torchEnabled = false;
     [SerializeField] private GameObject torchLight;
@@ -23,6 +24,7 @@ public class TorchItem : MonoBehaviour
         {
             torchEnabled = !torchEnabled;
             torchLight.SetActive(torchEnabled);
+            toggleOnandOff.Play();
 
             if (torchEnabled) 
             {
