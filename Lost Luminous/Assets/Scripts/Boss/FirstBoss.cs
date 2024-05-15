@@ -29,7 +29,7 @@ public class FirstBoss : MonoBehaviour
         phases[0] = speed;
         phases[1] = speed*1.8f;
         phases[2] = phases[1]*2f;
-        phases[3] = phases[2]*2f;
+        phases[3] = phases[2]*1.5f;
         Player = GameObject.FindGameObjectWithTag("Player").transform;
         StartCoroutine(dashAttack());
     }
