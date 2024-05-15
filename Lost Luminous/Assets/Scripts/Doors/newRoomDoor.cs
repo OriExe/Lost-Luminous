@@ -1,16 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class DoorScript : MonoBehaviour
+public class newRoomDoor : MonoBehaviour
 {
+    public AudioSource DoorOpen;
 
     [Header("Radius door can open fields")]
     [SerializeField] private float doorOpenRadius;
     [SerializeField] private LayerMask playerMask;
     private bool playerNearDoor;
 
-    [SerializeField] private Transform newPosition;
+    private int sceneIndex;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +25,9 @@ public class DoorScript : MonoBehaviour
         playerNearDoor = Physics2D.OverlapCircle(transform.position, doorOpenRadius, playerMask);
         if (Input.GetButtonDown("Interact") && playerNearDoor)
         {
-            GameObject.FindGameObjectWithTag("Player").transform.position = newPosition.position;
+            DoorOpen.Play();
+            SceneManager.LoadScene(sceneIndex);
+            
         }
     }
     private void OnDrawGizmosSelected()
