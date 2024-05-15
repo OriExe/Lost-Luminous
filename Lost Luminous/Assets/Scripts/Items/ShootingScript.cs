@@ -22,9 +22,10 @@ public class ShootingScript : MonoBehaviour
         
         if (ammo > 0)
         {
+            print(Input.GetAxisRaw("Fire1"));
             if ((Input.GetAxisRaw("Fire1") < -0.5f || Input.GetButtonDown("Fire1")) && timeLeft <= 0 && !buttonHeld)
             {
-                Rigidbody2D Bullet = Instantiate(bullet, Gun.position, Gun.parent.rotation).GetComponent<Rigidbody2D>();
+                Rigidbody2D Bullet = Instantiate(bullet, Gun.position, Gun.rotation).GetComponent<Rigidbody2D>();
                 Bullet.velocity = Gun.up * bulletforce;
                 Destroy(Bullet.gameObject, 4f);
                 timeLeft = shootingSpeed;
