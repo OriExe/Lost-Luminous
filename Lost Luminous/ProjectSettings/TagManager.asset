@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Bullet
   - Enemy
+  - LineCam
   layers:
   - Default
   - TransparentFX

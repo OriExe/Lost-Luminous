@@ -13,7 +13,7 @@ public class PuzzleStart : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Cursor.visible = true;
+
     }
 
     // Update is called once per frame
@@ -21,17 +21,21 @@ public class PuzzleStart : MonoBehaviour
     {
         playerNear = Physics2D.OverlapCircle(transform.position, radius, playerLayer);
 
-        if (playerNear && Input.GetButton("Interact"))
+        if ((playerNear && Input.GetButtonDown("Interact")) && !puzzleActive)
         {
             puzzle.SetActive(true);
             puzzleActive = true;
+            Cursor.visible = true;
         }
+        //This doesn't work for some reason
+        /*
         if (puzzleActive && Input.GetKeyDown(KeyCode.Escape))
         {
-            puzzleActive = false;
             puzzle.SetActive(false);
+            puzzleActive = false;
             Cursor.visible = false;
         }
+        */
 
 
     }

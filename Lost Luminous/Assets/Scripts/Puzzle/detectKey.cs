@@ -8,6 +8,7 @@ public class detectKey : MonoBehaviour
     private bool playerNear;
     [SerializeField] private LayerMask playerLayer;
     [SerializeField] private float radius;
+    [SerializeField] private GameObject keyDoor;
     private GameObject player;
     // Start is called before the first frame update
     void Start()
@@ -22,10 +23,10 @@ public class detectKey : MonoBehaviour
         if (playerNear && Input.GetButtonDown("Interact"))
         {
             keyItem key = player.GetComponentInChildren<keyItem>();
-            if (key.enabled == true)
+            if (key.getKey() > 0)
             {
-                key.enabled = false;
-                Destroy(gameObject);
+                key.setKey(-1);
+                Destroy(keyDoor);
 
             }
         }

@@ -4,8 +4,17 @@ using UnityEngine;
 
 public class keyItem : MonoBehaviour
 {
+    private int amount = 1;
     private void Start()
     {
-       //Nothing here lol 
+        
+    }
+    public void setKey(int number)
+    {
+        amount += number;
+    }
+    public int getKey()
+    {
+        return amount;
     }
 }

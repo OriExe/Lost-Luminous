@@ -2,14 +2,15 @@ using UnityEngine;
 
 public class BatteryItem : MonoBehaviour
 {
-    [SerializeField] private int numberOfBatteries;
     [SerializeField] private TorchItem torch;
     // Start is called before the first frame update
 
-
-    private void OnEnable()
+    private void Start()
     {
-        torch.chargeTorch(numberOfBatteries);
-        enabled = false;
+        
+    }
+    public void setAmount(int amount)
+    {
+        torch.chargeTorch(amount);
     }
 }

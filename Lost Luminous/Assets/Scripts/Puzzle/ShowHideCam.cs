@@ -8,15 +8,16 @@ public class ShowHideCam : MonoBehaviour
 
     private void OnEnable()
     {
-        puzzle.SetActive(true);
+        Instantiate(puzzle);
     }
     private void OnDisable()
     {
-        puzzle.SetActive(false); 
+        Destroy(puzzle);
     }
 
     private void OnDestroy()
     {
+
         Destroy(puzzle);
     }
 }

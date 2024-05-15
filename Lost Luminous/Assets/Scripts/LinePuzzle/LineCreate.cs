@@ -16,7 +16,7 @@ public class LineCreate : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        cam = GameObject.FindGameObjectWithTag("LineCam").GetComponent<Camera>();
         Collider.transform.position += transform.position; //Only useful if I move the line object
     }
 

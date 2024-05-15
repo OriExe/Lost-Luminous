@@ -75,16 +75,16 @@ public class PickUpItem : MonoBehaviour
                         weaponSwitcher.addItem(itemHeld);
                         break;
                     case items.battery:
-                        batteryScript.enabled = true;
+                        batteryScript.setAmount(2);
                         break;
                     case items.sword:
                         weaponSwitcher.addItem(itemHeld);
                         break;
                     case items.bullets:
-                        bulletScript.enabled = true;
+                        bulletScript.addBullets(20);
                         break;
                     case items.key:
-                        keyItem.enabled = true;
+                        keyItem.setKey(1);
                         break;
                 
                 }
