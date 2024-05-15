@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/-1 Basement.unity
     guid: 195923dc1be624148aee142020824766
   - enabled: 1
+    path: Assets/Scenes/Bossfight SCENE.unity
+    guid: 742468eeef93deb4289c6a046e44e6f5
+  - enabled: 1
     path: Assets/Scenes/Credits Page.unity
     guid: 89276df1bac5c0e4a8b451fe654b9158
   m_configObjects: {}

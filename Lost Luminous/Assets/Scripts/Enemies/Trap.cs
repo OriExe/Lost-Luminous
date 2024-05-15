@@ -7,7 +7,7 @@ public class Trap : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            PlayerHealth.healthInstance.healthChange(PlayerHealth.healthInstance.getHealth());
+            PlayerHealth.healthInstance.healthChange(-PlayerHealth.healthInstance.getHealth());
             //Play trap Animation
         }
     }
