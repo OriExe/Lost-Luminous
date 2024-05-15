@@ -41,6 +41,7 @@ public class GunControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (PuzzleStart.puzzleActive) return;
         Vector2 direction = new Vector2(0,0);
         if (isController)
         {

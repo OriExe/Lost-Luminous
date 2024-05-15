@@ -11,6 +11,7 @@ public class TextAppear : MonoBehaviour
     [SerializeField] private TMP_InputField inputField;
     private string input;
     [SerializeField] private string CorrectPassword;
+    [SerializeField] private PuzzleStart endPuzzle;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +39,7 @@ public class TextAppear : MonoBehaviour
             if (inputField.text.ToLower() == CorrectPassword.ToLower())
             {
                 print("You win");
+                endPuzzle.endPuzzle();
             }
             else
             {

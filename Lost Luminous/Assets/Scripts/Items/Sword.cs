@@ -14,6 +14,7 @@ public class Sword : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (PuzzleStart.puzzleActive) return;
         if (Input.GetButtonDown("Fire1"))
         {
             //Play animation and sound

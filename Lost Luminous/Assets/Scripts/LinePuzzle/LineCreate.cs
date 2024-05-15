@@ -8,7 +8,7 @@ namespace LinePuzzle
 public class LineCreate : MonoBehaviour
 {
     [SerializeField] private LineRenderer lineRenderer;
-    private Camera cam;
+    [SerializeField]private Camera cam;
     private const float RESOLUTION = 0.1f;
     [SerializeField]private EdgeCollider2D Collider;
     private List<Vector2> collisionPoints = new List<Vector2>();
@@ -16,8 +16,8 @@ public class LineCreate : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        cam = Camera.main;
-        //Collider.transform.position -= transform.position; Only useful if I move the line object
+
+        Collider.transform.position += transform.position; //Only useful if I move the line object
     }
 
     // Update is called once per frame

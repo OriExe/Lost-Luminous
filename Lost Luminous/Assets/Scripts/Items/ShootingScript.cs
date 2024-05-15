@@ -17,6 +17,7 @@ public class ShootingScript : MonoBehaviour
 
     void Update()
     {
+        if (PuzzleStart.puzzleActive) return;
         //Controls shooting speed by lowering the time, If timeleft is 0 the player can shoot
         if (timeLeft > 0)
         {

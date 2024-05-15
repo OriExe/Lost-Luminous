@@ -21,6 +21,7 @@ public class ItemScrolling : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (PuzzleStart.puzzleActive) return;
         if (unlockedItems.Count == 0) return; 
         if (Input.GetAxis("Mouse ScrollWheel") > 0 || Input.GetButtonDown("RB"))
         {

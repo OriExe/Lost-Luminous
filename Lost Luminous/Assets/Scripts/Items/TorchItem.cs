@@ -20,6 +20,7 @@ public class TorchItem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (PuzzleStart.puzzleActive) return;
         if ((Input.GetButtonDown("Fire1") || Input.GetAxisRaw("Fire1") < -0.5f) && power > 0)
         {
             torchEnabled = !torchEnabled;

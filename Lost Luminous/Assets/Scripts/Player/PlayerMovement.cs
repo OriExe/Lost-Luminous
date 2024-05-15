@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     
     void Update()
     {
+        if (PuzzleStart.puzzleActive) return;
         moveInput.x = Input.GetAxisRaw("Horizontal");
         moveInput.y = Input.GetAxisRaw("Vertical");
 
