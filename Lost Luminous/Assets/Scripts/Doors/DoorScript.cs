@@ -4,17 +4,13 @@ using UnityEngine;
 
 public class DoorScript : MonoBehaviour
 {
-    [SerializeField] private SpriteRenderer doorSprite;
-    [SerializeField] private BoxCollider2D colider;
-    private bool doorOpen;
 
-    [Header("Door Sprites")]
-    [SerializeField]private Sprite doorOpened;
-    [SerializeField]private Sprite doorClosed;
     [Header("Radius door can open fields")]
     [SerializeField] private float doorOpenRadius;
     [SerializeField] private LayerMask playerMask;
     private bool playerNearDoor;
+
+    [SerializeField] private Transform newPosition;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,18 +23,7 @@ public class DoorScript : MonoBehaviour
         playerNearDoor = Physics2D.OverlapCircle(transform.position, doorOpenRadius, playerMask);
         if (Input.GetButtonDown("Interact") && playerNearDoor)
         {
-            if (doorOpen) 
-            {
-                doorSprite.sprite = doorClosed;
-                colider.enabled = true;
-                doorOpen = false;
-            }
-            else if (doorClosed) 
-            {
-                doorOpen = true;
-                doorSprite.sprite = doorOpened;
-                colider.enabled = false;
-            }
+            GameObject.FindGameObjectWithTag("Player").transform.position = newPosition.position;
         }
     }
     private void OnDrawGizmosSelected()
