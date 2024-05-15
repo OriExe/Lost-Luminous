@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91f73325747b68b4b9e505a1cd28a0ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DoorOpen: {fileID: 0}
+  DoorOpen: {fileID: 4100152950353061293}
   doorOpenRadius: 0.87
   playerMask:
     serializedVersion: 2
