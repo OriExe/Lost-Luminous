@@ -289,6 +289,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 4.7
   rb2d: {fileID: 7027864208164035064}
+  animator: {fileID: 4834634778344448511}
+  sprite: {fileID: 4834634778344448510}
 --- !u!61 &3739598835315181920
 BoxCollider2D:
   m_ObjectHideFlags: 0

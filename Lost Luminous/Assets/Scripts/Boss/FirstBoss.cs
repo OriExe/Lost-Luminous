@@ -15,8 +15,8 @@ public class FirstBoss : MonoBehaviour
     /// <summary>
     /// Attack Phases
     /// </summary>
-    [SerializeField]private float[] phases = new float[4];
-    private float lengthOfAttack = 2f;
+    [SerializeField]private float[] phases = new float[5];
+    [SerializeField]private float lengthOfAttack = 2f;
     private int currentPhase = 0;
     private float startingHealth;
 
@@ -30,6 +30,7 @@ public class FirstBoss : MonoBehaviour
         phases[1] = speed*1.8f;
         phases[2] = phases[1]*2f;
         phases[3] = phases[2]*1.5f;
+        phases[4] = 0.012f;
         Player = GameObject.FindGameObjectWithTag("Player").transform;
         StartCoroutine(dashAttack());
     }
@@ -52,19 +53,6 @@ public class FirstBoss : MonoBehaviour
                 SceneManager.LoadScene(5);
             }
 
-        }
-
-        
-
-        if (speed == phases[3])
-        {
-            lengthOfAttack -= Time.deltaTime;
-        }
-        if (lengthOfAttack <=0)
-        {
-            speed = phases[currentPhase];
-            lengthOfAttack = 2f;
-            StartCoroutine(dashAttack());
         }
 
         float currentHealth = healthCode.getHealth();
@@ -96,8 +84,11 @@ public class FirstBoss : MonoBehaviour
             yield return new WaitForSeconds(0.5f);
         }
         speed = phases[3];
-        lengthOfAttack = 2f;
-        yield return null;
+        yield return new WaitForSeconds(lengthOfAttack);
+        speed = phases[4];
+        yield return new WaitForSeconds(1.7f);
+        speed = phases[currentPhase];
+        StartCoroutine(dashAttack());
         
     }
 

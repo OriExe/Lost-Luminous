@@ -38230,6 +38230,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4834634778344448510, guid: 2775c59369c5edf46b557c0975a94ffe, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4834634778344448510, guid: 2775c59369c5edf46b557c0975a94ffe, type: 3}
+      propertyPath: m_FlipY
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4834634778604200955, guid: 2775c59369c5edf46b557c0975a94ffe, type: 3}
       propertyPath: ammo
       value: 120
